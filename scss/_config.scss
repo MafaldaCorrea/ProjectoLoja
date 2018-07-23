@@ -1,0 +1,30 @@
+$primary-font:'Lato', sans-serif;
+$secondary-font:'Frank Ruhl Libre', serif;
+
+body, html {
+	height: 100%;
+	font-family: $primary-font;
+	color: #303030;
+	max-width: 1300px;
+	width: 96%;
+	margin: 0 auto;
+	font-size:14px;
+	padding-top:54px;
+
+	::selection {
+   		color: #ffffff;
+    	background: #f68236;
+	}
+
+	@include mq(0, 880px) {
+		padding-top:41px;
+	}
+
+	@include mq(0, 375px) {
+		width:100%;
+	}
+}
+
+.right {
+	float:right;
+}

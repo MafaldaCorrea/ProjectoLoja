@@ -1,0 +1,340 @@
+nav {
+	width: 92.5%;
+	max-width: 1300px;
+	font-size: 0;
+	position:fixed;
+	z-index:1;
+	top:0;
+	left:50%;
+	transform:translateX(-50%);
+	background-color:#ffffff;
+	border-bottom: solid #282828 1px;
+
+	@include mq(0, 375px) {
+		width:100%;
+
+	}
+	
+	.categories {
+		width:50%;
+		display: inline-block;
+
+		@include mq(880px,1140px) {
+			width:50%;
+		}
+		//HAMBURGER MENU HIDDEN - DISPLAY ON HOVER
+		@include mq(0,880px) {
+			display:block;
+			width:100%;
+			position:fixed;
+			top:-1000px;
+			left:0;
+			z-index:8;
+			background-color:#f1f1f1;
+		}
+
+
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 20px;
+			font-size: 14px;
+			word-spacing:3px;
+
+			//HIDDEN SEARCH FOR HAMBURGER MENU
+			&.search {
+				display:none;
+			}
+
+			@include mq(880px,1140px) {
+				margin: 0 10px;
+			}
+			// FOR HAMBURGER MENU
+			@include mq(0,880px) {
+				display:block;
+				width:100%;
+				background:#f1f1f1;
+				margin-left:0;
+				padding: 10px 0 10px 45px;
+				line-height:30px;
+				text-transform:uppercase;
+				position:relative;
+				//DISPLAY SEARCH IN HAMBURGER MENU
+				&.search {
+					display:block;
+
+					input {
+						height:25px;
+						width:300px;
+						background:#f1f1f1;
+						border:none;
+						font-size:18px;
+
+					}
+				}
+
+				&:before {
+					content: '';
+					width:2px;
+					height:28px;
+					background-color:#f68236;
+					z-index:999;
+					position:absolute;
+					bottom:12px;
+					left:30px;
+				}
+				
+				a{
+					width:100%;
+				}
+
+				&:nth-of-type(2){
+					padding-top:95px;
+				}
+			}
+
+			&:first-of-type {
+				margin-left:0;
+				@include mq(0,880px) {
+					display:none;
+				}
+			}
+			a {
+				&:hover {
+					text-decoration: underline;
+
+					@include mq(0,880px) {
+						text-decoration:none;
+					}
+				}
+
+				@include mq(0,880px) {
+					font-size:16px;
+				}
+
+				p {
+					display: inline-block;
+					width: 42px;
+					height: 42px;
+					background: #282828;
+					margin: 33px 10px 33px 0;
+					color: white;
+					text-align: center;
+					text-transform: uppercase;
+					line-height: 42px;
+					font-weight: 100;
+
+					&:hover {
+					    border-radius: 15px;
+					    transition:all 0.5s;
+					}
+
+					@include mq(880px,1140px) {
+						margin-right:10px;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: #222222;
+
+		@include mq(0,880px) {
+			width:10%;
+			vertical-align:middle;
+			// HAMBURGER MENU ICON
+			&.btnMenu {
+				font-size:27px;
+				float:left;
+				margin-top:27px;
+				z-index:10;
+				position:relative;
+				width:45%;
+
+				@include mq(376px, 880px) {
+					margin: 25px 0;
+				}
+
+				@include mq(0,375px) {
+					font-size:25px;
+					padding-left:5px;
+				}
+				// DISPLAY HAMBURGER MENU
+				&:hover {
+					& + ul {
+						&.categories{
+							top:0;
+							transition: all 0.5s ease-in-out;
+						}
+					}
+				}
+			}
+		}		
+	}
+
+	.ctaicons {
+		text-align: right;
+		width:50%;
+		display: inline-block;
+
+		@include mq(880px,1140px) {
+			width:50%;
+		}
+
+		@include mq(0, 880px) {
+			float:right;
+			width: 45%;
+    		margin: 29px 0;
+
+    		.search {
+    			display:none;
+    		}
+		}
+
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 25px;
+			font-size: 14px;
+
+			&:hover {
+				font-weight:bold;
+			}
+
+			@include mq(0,1140px) {
+				margin: 0 10px;
+				z-index:10;
+				position:relative;
+			}
+
+			@include mq(0,375px) {
+					margin: 0 5px;
+				}
+
+			i {
+				font-size: 20px;
+
+				@include mq(376px,880px) {
+					font-size:20px;
+				}
+
+				@include mq(0,375px) {
+					font-size:20px;
+				}
+			}
+	
+			p {
+				display: inline-block;
+
+				@include mq(0,1140px) {
+					display:none;
+				}
+			}
+
+			&:last-of-type {
+				margin-right:0;
+			}
+
+			span {
+				a {
+					color:#f68236;
+
+					&:hover {
+					text-decoration:underline;
+					}
+				}
+			}
+		}
+
+		.search {
+			margin-right:0;
+			font-size:0;
+
+			i {
+				display:inline-block;
+				vertical-align:middle;
+				&.icon-zoom {
+					font-size:26px;
+					padding:5px;
+					border: 1px solid black;
+
+					@include mq(0,880px) {
+						font-size:23px;
+					}
+				}
+			}
+
+			input {
+				width:0;
+				border:none;
+				height:37px;
+				vertical-align:middle;
+				padding-left:5px;
+				background-color:transparent;
+
+				@include mq(0,880px) {
+					height:35px;
+				}
+
+				@include mq(0,375px) {
+					padding-left:3px;
+				}
+			}
+			
+
+			&:hover {
+
+				input {
+					width:130px;
+					border-bottom:1px solid black;
+					transition: all 0.5s;					
+				}
+
+				i {
+					color:white;
+					background-color:#606060;
+					border:1px solid #959595;
+				}
+			}
+
+			@include mq(880px,1140px) {
+				padding:7px;
+			}
+
+			@include mq(0,880px) {
+				border:none;
+				padding: 0;
+			}
+		}
+	}
+	//CENTER LOGO DISPLAY ON MOBILE NAV
+	.logo {
+
+		@include mq(0,880px) {
+			display:inline-block;
+			width:10%;
+			text-align:center;
+			z-index:9;
+			position:relative;
+		}
+		p {
+			display:none;
+
+			@include mq(0,880px) {
+				display:inline-block;
+				width:42px;
+				height: 42px;
+				background: #282828;
+				margin: 20px 0;
+				color: white;
+				text-align: center;
+				text-transform: uppercase;
+				line-height: 42px;
+				font-weight: 100;
+				font-size:14px;
+			}
+		}
+	}
+}

@@ -1,0 +1,69 @@
+.gallery {
+	width:100%;
+	height:43.5vw;
+	max-height:590px;
+	position: relative;
+	background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+
+    .arrow {
+    	display:none;
+		transform:translateY(-50%);
+		top:50%;
+		position:relative;
+		font-size:28px;
+		opacity:0.5;
+		cursor: pointer;
+
+    	@include mq(0,670px) {
+    		display:inline-block;
+    	}
+    }
+
+	@include mq(0,670px) {
+		height:50vw;
+	}
+
+	ul {
+		position: absolute;
+		right:11px;
+		bottom:0;
+
+		@include mq(0,670px) {
+			display:none;
+		}
+
+		li {
+			margin-bottom:11px;
+			width:70px;
+			height:70px;
+			border: #e5e5e5 solid 1px;
+			overflow:hidden;
+			position:relative;
+			
+
+			&:hover {
+				transform:translateX(-5px) scale(1.2);
+				box-shadow:5px 5px 10px grey;
+				transition: all 0.4s;
+			}
+
+			@include mq(0,670px) {
+				display:none;
+			}
+
+			img {
+				height:100%;
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+		}
+	}
+}
+
+.hide {
+	display:none;
+}

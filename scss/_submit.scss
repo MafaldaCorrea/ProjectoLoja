@@ -1,0 +1,103 @@
+.submit {
+	height: 452px;
+	width: 100%;
+	text-align: center;
+
+	@include mq(0, 375px) {
+		height:350px;
+	}
+
+	article {
+		width: 80%;
+		position: relative;
+    	top:50%;
+    	left:50%;
+    	transform: translate(-50%,-50%);
+
+		h1 {
+		text-transform: uppercase;
+		font-size: 36px;
+		letter-spacing: 2px;
+
+			@include mq(376px,670px) {
+				font-size:28px;
+				line-height:33px;
+			}
+
+			@include mq(0, 375px) {
+				font-size:20px;
+				line-height:33px;
+			}
+		}
+
+		p {
+		font-size: 18px;
+		line-height: 40px;
+		margin-top:30px;
+			@include secondary-font;
+
+			@include mq(376px,670px) {
+			font-size:14px;
+			line-height:30px;
+			}
+
+			@include mq(0, 375px) {
+				font-size:12px;
+				line-height:20px;
+			}
+		}
+
+		form {
+			margin-top: 56px;
+			font-size:0;
+			input {
+				display: inline-block;
+				vertical-align: top;
+				font-weight: 100;
+				font-size: 14px;
+				letter-spacing: 1.5px;
+
+				@include mq(0, 375px) {
+					font-size:12px;
+				}
+			}
+
+			input[type=email] {
+				width: 80%;
+				max-width: 475px;
+				height: 56px;
+				font-style: italic;
+				padding-left: 14px;
+				border: 1px solid #606060;
+				border-right: none;
+
+				@include mq(0, 375px) {
+					width:75%;
+					height:45px;
+				}
+			}
+
+			input[type=submit] {
+				max-width: 95px;
+				width: 15%;
+				height: 56px;
+				background: #f68236;
+				border: 1px solid #e67429;
+				color: #ffffff;
+				cursor:pointer;
+
+				@include mq(0, 375px) {
+					width:25%;
+					height:45px;
+				}
+
+				&:hover {
+					width:20%;
+					max-width: 120px;
+					transition:all 0.4s;
+
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,177 @@
+.tiles {
+	letter-spacing: 1.5px;
+	font-size: 0;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+
+	@include mq(0,670px) {
+		max-width:400px;
+	}
+
+	@include mq(670px,975px) {
+		max-width:800px;
+	}
+
+
+	a {
+		width: calc(100% / 4);
+		max-width:400px;
+		height: 300px;
+		float:left;
+		font-size:10px;
+		color: #ffffff;
+		position: relative;
+		text-align: center;
+		background-repeat:no-repeat;
+	    background-size:cover;
+	    background-position:center;
+	    text-decoration:none;
+
+	    @include mq(0,975px) {
+	    	@include darkbackground
+	    }
+		
+		/*IPAD PRO MQ*/
+	    @media only screen 
+			  and (min-device-width: 1024px) 
+			  and (max-device-width: 1366px) 
+			  and (-webkit-min-device-pixel-ratio: 1.5) {
+			  	opacity:1;
+			  	@include darkbackground
+			}
+
+
+
+		&:hover {
+			text-decoration:none;
+			@include darkbackground
+			.hidden {
+				opacity:1;
+				transition:all 1s;
+			}
+		}
+
+		article {
+			text-align: center;
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			max-width: 60%;
+			margin: 0 auto;
+		}
+
+		.info {
+			text-transform: uppercase;
+			line-height: 27px;
+			h1 {
+				font-size:24px;
+			}
+
+			h2 {
+				@include secondary-font;
+				font-size: 17px;
+			}
+
+			i {
+				font-size:40px;
+			}
+		}
+
+		.hidden {
+			opacity:0;
+
+			@include mq(0,975px) {
+				opacity:1;
+			}
+
+			@media only screen 
+			  and (min-device-width: 1024px) 
+			  and (max-device-width: 1366px) 
+			  and (-webkit-min-device-pixel-ratio: 1.5) {
+			  	opacity:1;
+			}
+		}
+
+		.social {
+			i {
+				font-size: 50px;
+			}
+
+			em {
+				font-size:13px;
+				@include secondary-font;
+				line-height: 20px;
+				display: block;
+				margin-top: 28px;
+			}
+
+			span {
+				display: block;
+				margin-top: 23px;
+				font-size: 13px;
+				text-decoration: none;
+				color: #ffffff;
+			}
+
+			&:before {
+				content: '';
+				width: 15%;
+				height: 1px;
+				background:#ffffff;
+				position: absolute;
+				top: 26px;
+				left: 15%;
+			}
+
+			&:after {
+				content: '';
+				width: 15%;
+				height: 1px;
+				background:#ffffff;
+				position: absolute;
+				top: 26px;
+				right: 15%;
+			}
+		}
+
+
+		&:nth-of-type(7){
+			float:right;
+		}
+
+		/*TILE SIZE MQ*/
+
+		@include mq(0,670px) {
+			width:100%;
+		}
+
+		@include mq(670px,975px) {
+			width:50%;
+		}
+
+		/*END TILE SIZE MQ*/
+	}
+
+
+	.rectangle {
+		height: 600px;
+		width: calc(100% / 4);
+		max-width:400px;
+		background-repeat:no-repeat;
+	    background-size:cover;
+	    background-position:center;
+	    position: relative;
+
+	    @include mq(0,670px) {
+			background-position:top;
+			width:100%;
+			height:300px;
+		}
+
+		@include mq(670px,975px) {
+			width:50%;
+		}
+	}
+}
